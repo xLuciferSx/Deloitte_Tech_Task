@@ -14,6 +14,7 @@
 		1F0009B12CE130AA00F7BFD6 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0009B02CE130A200F7BFD6 /* StoreManager.swift */; };
 		1F0009B32CE130D700F7BFD6 /* NNSNotificationName+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0009B22CE130CF00F7BFD6 /* NNSNotificationName+Extensions.swift */; };
 		1F0009B62CE1403800F7BFD6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1F0009B52CE1403800F7BFD6 /* Kingfisher */; };
+		1F0009D62CE1452300F7BFD6 /* Storyboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0009D52CE1452300F7BFD6 /* Storyboard+Extensions.swift */; };
 		BE5F27F822F035AF00F2C97D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F27F722F035AF00F2C97D /* AppDelegate.swift */; };
 		BE5F27FA22F035AF00F2C97D /* CatalogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F27F922F035AF00F2C97D /* CatalogueViewController.swift */; };
 		BE5F27FF22F035AF00F2C97D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5F27FD22F035AF00F2C97D /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		1F0009B02CE130A200F7BFD6 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		1F0009B22CE130CF00F7BFD6 /* NNSNotificationName+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NNSNotificationName+Extensions.swift"; sourceTree = "<group>"; };
 		1F0009C92CE1438800F7BFD6 /* Clothes StoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Clothes StoreTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F0009D52CE1452300F7BFD6 /* Storyboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Extensions.swift"; sourceTree = "<group>"; };
 		BE5F27F422F035AF00F2C97D /* Clothes Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clothes Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5F27F722F035AF00F2C97D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE5F27F922F035AF00F2C97D /* CatalogueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,15 @@
 				1F0009B02CE130A200F7BFD6 /* StoreManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		1F0009D72CE1453C00F7BFD6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1F0009D52CE1452300F7BFD6 /* Storyboard+Extensions.swift */,
+				1F0009B22CE130CF00F7BFD6 /* NNSNotificationName+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BE5F27EB22F035AF00F2C97D = {
@@ -156,7 +167,7 @@
 		BE5F282C22F24E2100F2C97D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				1F0009B22CE130CF00F7BFD6 /* NNSNotificationName+Extensions.swift */,
+				1F0009D72CE1453C00F7BFD6 /* Extensions */,
 				BE5F281122F05FFA00F2C97D /* CurrencyHelpers.swift */,
 				BE5F281322F068C500F2C97D /* UIView+Extensions.swift */,
 				BE5F282122F19C0200F2C97D /* HapticFeedback.swift */,
@@ -315,6 +326,7 @@
 				BE5F282622F1F4A400F2C97D /* TabBarController.swift in Sources */,
 				BE5F282222F19C0300F2C97D /* HapticFeedback.swift in Sources */,
 				BE5F282022F0E4C600F2C97D /* DetailViewContainerViewController.swift in Sources */,
+				1F0009D62CE1452300F7BFD6 /* Storyboard+Extensions.swift in Sources */,
 				1F0009722CE119BD00F7BFD6 /* Coordinator.swift in Sources */,
 				BE5F27F822F035AF00F2C97D /* AppDelegate.swift in Sources */,
 				BE5F27FA22F035AF00F2C97D /* CatalogueViewController.swift in Sources */,

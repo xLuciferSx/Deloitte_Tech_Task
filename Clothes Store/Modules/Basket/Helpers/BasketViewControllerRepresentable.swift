@@ -10,10 +10,7 @@ import SwiftUI
 
 struct BasketViewControllerRepresentable: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> BasketViewController {
-        let storyboard = UIStoryboard(name: "Basket", bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: "BasketViewController") as? BasketViewController else {
-            fatalError("BasketViewController not found in Basket storyboard")
-        }
+        let viewController: BasketViewController = UIStoryboard.instantiateViewController(from: .basket, identifier: .basketViewController)
         return viewController
     }
 

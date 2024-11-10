@@ -10,10 +10,7 @@ import SwiftUI
 
 struct WishlistViewControllerRepresentable: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> WishlistViewController {
-        let storyboard = UIStoryboard(name: "Wishlist", bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: "WishlistViewController") as? WishlistViewController else {
-            fatalError("WishlistViewController not found in Wishlist storyboard")
-        }
+        let viewController: WishlistViewController = UIStoryboard.instantiateViewController(from: .wishlist, identifier: .wishlistViewController)
         return viewController
     }
 

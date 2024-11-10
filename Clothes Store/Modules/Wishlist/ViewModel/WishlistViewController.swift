@@ -91,9 +91,21 @@ extension WishlistViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "Remove", handler: { _, _, _ in
-            Haptic.feedBack()
-        })
+        let deleteAction = UIContextualAction(style: .destructive, title: "Remove") { [weak self] _, _, completionHandler in
+               guard let self = self else { return }
+
+               Haptic.feedBack()
+
+               let product = self.wishlistProducts[indexPath.row]
+               
+               StoreManager.shared.removeFromWishlist(product)
+               
+               self.wishlistProducts.remove(at: indexPath.row)
+               tableView.deleteRows(at: [indexPath], with: .automatic)
+               self.noProductsLabel.isHidden = !self.wishlistProducts.isEmpty
+               
+               completionHandler(true)
+           }
 
         deleteAction.backgroundColor = UIColor.primaryColour
 

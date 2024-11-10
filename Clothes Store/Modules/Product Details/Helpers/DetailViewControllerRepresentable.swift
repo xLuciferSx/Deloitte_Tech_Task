@@ -13,8 +13,7 @@ struct DetailViewControllerRepresentable: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentationMode
 
     func makeUIViewController(context: Context) -> DetailViewContainerViewController {
-        let storyboard = UIStoryboard(name: "ProductDetail", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "DetailViewContainerViewController") as! DetailViewContainerViewController
+        let viewController: DetailViewContainerViewController = UIStoryboard.instantiateViewController(from: .productDetail, identifier: .detailViewContainer)
         viewController.product = product
         viewController.delegate = context.coordinator
         return viewController
