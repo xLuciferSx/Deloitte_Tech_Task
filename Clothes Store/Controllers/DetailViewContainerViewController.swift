@@ -8,8 +8,11 @@
 
 import UIKit
 
-class DetailViewContainerViewController: UIViewController{
+protocol DetailViewContainerDelegate: AnyObject {
+    func didCloseDetailView()
+}
 
+class DetailViewContainerViewController: UIViewController{
 
     //Views
     var backButton : UIBarButtonItem!
@@ -20,10 +23,10 @@ class DetailViewContainerViewController: UIViewController{
 
     //Variables
     var product : Product!
+    weak var delegate: DetailViewContainerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setUpButtons()
     }
     

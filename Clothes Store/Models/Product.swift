@@ -16,7 +16,8 @@ struct Products: Codable {
 
 // MARK: - Product
 struct Product: Codable {
-    var productId, name: String?
+    var productId: String
+    var name: String
     var category: Category?
     var price: Float?
     var stock: Int?
@@ -35,4 +36,6 @@ struct Cart: Codable {
     let cartId, productId: Int?
 }
 
-
+extension Product: Identifiable {
+    var id: String { productId }
+}
