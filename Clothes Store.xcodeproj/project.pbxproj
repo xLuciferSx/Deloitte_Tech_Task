@@ -11,6 +11,9 @@
 		13BBE6C12642AC250045F488 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 13BBE6C02642AC250045F488 /* Alamofire */; };
 		1F0009722CE119BD00F7BFD6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0009712CE119BA00F7BFD6 /* Coordinator.swift */; };
 		1F0009742CE11A7700F7BFD6 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0009732CE11A7400F7BFD6 /* MainTabView.swift */; };
+		1F0009B12CE130AA00F7BFD6 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0009B02CE130A200F7BFD6 /* StoreManager.swift */; };
+		1F0009B32CE130D700F7BFD6 /* NNSNotificationName+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0009B22CE130CF00F7BFD6 /* NNSNotificationName+Extensions.swift */; };
+		1F0009B62CE1403800F7BFD6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1F0009B52CE1403800F7BFD6 /* Kingfisher */; };
 		BE5F27F822F035AF00F2C97D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F27F722F035AF00F2C97D /* AppDelegate.swift */; };
 		BE5F27FA22F035AF00F2C97D /* CatalogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F27F922F035AF00F2C97D /* CatalogueViewController.swift */; };
 		BE5F27FF22F035AF00F2C97D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5F27FD22F035AF00F2C97D /* Main.storyboard */; };
@@ -21,18 +24,18 @@
 		BE5F281022F05D0300F2C97D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F280F22F05D0300F2C97D /* Constants.swift */; };
 		BE5F281222F05FFA00F2C97D /* CurrencyHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F281122F05FFA00F2C97D /* CurrencyHelpers.swift */; };
 		BE5F281422F068C500F2C97D /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F281322F068C500F2C97D /* UIView+Extensions.swift */; };
-		BE5F281A22F0AF0A00F2C97D /* WishlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F281922F0AF0A00F2C97D /* WishlistViewController.swift */; };
 		BE5F281E22F0E00800F2C97D /* ProductDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F281D22F0E00800F2C97D /* ProductDetailTableViewController.swift */; };
 		BE5F282022F0E4C600F2C97D /* DetailViewContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F281F22F0E4C600F2C97D /* DetailViewContainerViewController.swift */; };
 		BE5F282222F19C0300F2C97D /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F282122F19C0200F2C97D /* HapticFeedback.swift */; };
 		BE5F282422F1A13600F2C97D /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F282322F1A13600F2C97D /* HUD.swift */; };
 		BE5F282622F1F4A400F2C97D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F282522F1F4A400F2C97D /* TabBarController.swift */; };
-		BE5F282822F238FC00F2C97D /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F282722F238FC00F2C97D /* BasketViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F0009712CE119BA00F7BFD6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		1F0009732CE11A7400F7BFD6 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		1F0009B02CE130A200F7BFD6 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		1F0009B22CE130CF00F7BFD6 /* NNSNotificationName+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NNSNotificationName+Extensions.swift"; sourceTree = "<group>"; };
 		BE5F27F422F035AF00F2C97D /* Clothes Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clothes Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5F27F722F035AF00F2C97D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE5F27F922F035AF00F2C97D /* CatalogueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueViewController.swift; sourceTree = "<group>"; };
@@ -45,13 +48,11 @@
 		BE5F280F22F05D0300F2C97D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BE5F281122F05FFA00F2C97D /* CurrencyHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyHelpers.swift; sourceTree = "<group>"; };
 		BE5F281322F068C500F2C97D /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		BE5F281922F0AF0A00F2C97D /* WishlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewController.swift; sourceTree = "<group>"; };
 		BE5F281D22F0E00800F2C97D /* ProductDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailTableViewController.swift; sourceTree = "<group>"; };
 		BE5F281F22F0E4C600F2C97D /* DetailViewContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewContainerViewController.swift; sourceTree = "<group>"; };
 		BE5F282122F19C0200F2C97D /* HapticFeedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
 		BE5F282322F1A13600F2C97D /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		BE5F282522F1F4A400F2C97D /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		BE5F282722F238FC00F2C97D /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -63,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F0009B62CE1403800F7BFD6 /* Kingfisher in Frameworks */,
 				13BBE6C12642AC250045F488 /* Alamofire in Frameworks */,
 				13069799264698800065C4C4 /* AlamofireImage in Frameworks */,
 			);
@@ -71,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F0009AF2CE1309D00F7BFD6 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1F0009B02CE130A200F7BFD6 /* StoreManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		BE5F27EB22F035AF00F2C97D = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +100,7 @@
 		BE5F27F622F035AF00F2C97D /* Clothes Store */ = {
 			isa = PBXGroup;
 			children = (
+				1F0009AF2CE1309D00F7BFD6 /* Managers */,
 				1F0009802CE11E2200F7BFD6 /* Modules */,
 				BE5F282922F24D9A00F2C97D /* Models */,
 				BE5F282B22F24DC500F2C97D /* Controllers */,
@@ -113,10 +124,8 @@
 		BE5F282B22F24DC500F2C97D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BE5F281922F0AF0A00F2C97D /* WishlistViewController.swift */,
 				BE5F281D22F0E00800F2C97D /* ProductDetailTableViewController.swift */,
 				BE5F281F22F0E4C600F2C97D /* DetailViewContainerViewController.swift */,
-				BE5F282722F238FC00F2C97D /* BasketViewController.swift */,
 				BE5F27F922F035AF00F2C97D /* CatalogueViewController.swift */,
 				BE5F282522F1F4A400F2C97D /* TabBarController.swift */,
 			);
@@ -126,6 +135,7 @@
 		BE5F282C22F24E2100F2C97D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1F0009B22CE130CF00F7BFD6 /* NNSNotificationName+Extensions.swift */,
 				BE5F281122F05FFA00F2C97D /* CurrencyHelpers.swift */,
 				BE5F281322F068C500F2C97D /* UIView+Extensions.swift */,
 				BE5F282122F19C0200F2C97D /* HapticFeedback.swift */,
@@ -177,6 +187,7 @@
 			packageProductDependencies = (
 				13BBE6C02642AC250045F488 /* Alamofire */,
 				13069798264698800065C4C4 /* AlamofireImage */,
+				1F0009B52CE1403800F7BFD6 /* Kingfisher */,
 			);
 			productName = "Clothes Store";
 			productReference = BE5F27F422F035AF00F2C97D /* Clothes Store.app */;
@@ -209,6 +220,7 @@
 			packageReferences = (
 				13BBE6BF2642AC250045F488 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				13069797264698800065C4C4 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+				1F0009B42CE1403800F7BFD6 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = BE5F27F522F035AF00F2C97D /* Products */;
 			projectDirPath = "";
@@ -237,7 +249,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE5F282822F238FC00F2C97D /* BasketViewController.swift in Sources */,
 				BE5F282622F1F4A400F2C97D /* TabBarController.swift in Sources */,
 				BE5F282222F19C0300F2C97D /* HapticFeedback.swift in Sources */,
 				BE5F282022F0E4C600F2C97D /* DetailViewContainerViewController.swift in Sources */,
@@ -249,8 +260,9 @@
 				BE5F281E22F0E00800F2C97D /* ProductDetailTableViewController.swift in Sources */,
 				BE5F280C22F05C3E00F2C97D /* DataService.swift in Sources */,
 				BE5F280E22F05C8600F2C97D /* Product.swift in Sources */,
+				1F0009B32CE130D700F7BFD6 /* NNSNotificationName+Extensions.swift in Sources */,
+				1F0009B12CE130AA00F7BFD6 /* StoreManager.swift in Sources */,
 				BE5F281422F068C500F2C97D /* UIView+Extensions.swift in Sources */,
-				BE5F281A22F0AF0A00F2C97D /* WishlistViewController.swift in Sources */,
 				BE5F281022F05D0300F2C97D /* Constants.swift in Sources */,
 				1F0009742CE11A7700F7BFD6 /* MainTabView.swift in Sources */,
 			);
@@ -474,6 +486,14 @@
 				minimumVersion = 5.4.3;
 			};
 		};
+		1F0009B42CE1403800F7BFD6 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -486,6 +506,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 13BBE6BF2642AC250045F488 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		1F0009B52CE1403800F7BFD6 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F0009B42CE1403800F7BFD6 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

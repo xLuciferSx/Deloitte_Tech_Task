@@ -1,5 +1,5 @@
 //
-//  Product
+//  Product.swift
 //  Clothes Store
 //
 //  Created by Richard Hope on 01/05/2021.
@@ -15,7 +15,7 @@ struct Products: Codable {
 }
 
 // MARK: - Product
-struct Product: Codable {
+struct Product: Codable, Identifiable, Hashable {
     var productId: String
     var name: String
     var category: Category?
@@ -23,6 +23,16 @@ struct Product: Codable {
     var stock: Int?
     var oldPrice: Float?
     var image: String?
+
+    var id: String { productId }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(productId)
+    }
+    
+    static func == (lhs: Product, rhs: Product) -> Bool {
+        return lhs.productId == rhs.productId
+    }
 }
 
 enum Category: String, Codable {
@@ -34,8 +44,4 @@ enum Category: String, Codable {
 // MARK: - Cart
 struct Cart: Codable {
     let cartId, productId: Int?
-}
-
-extension Product: Identifiable {
-    var id: String { productId }
 }

@@ -11,7 +11,7 @@
         <!--Wishlist-->
         <scene sceneID="UF0-Cp-9Pe">
             <objects>
-                <viewController id="Vba-eq-BeK" customClass="WishlistViewController" customModule="Clothes_Store" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WishlistViewController" id="Vba-eq-BeK" customClass="WishlistViewController" customModule="Clothes_Store" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XdS-GC-yp7">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,6 +77,7 @@
                                         <connections>
                                             <outlet property="addToButton" destination="a3y-rQ-bdj" id="wHe-nx-axg"/>
                                             <outlet property="cellView" destination="LRB-RC-6Ru" id="Xhs-Fr-8Y8"/>
+                                            <outlet property="productImage" destination="dUK-nj-6mW" id="GEg-Ph-vn0"/>
                                             <outlet property="productName" destination="TEC-zL-72Y" id="2wa-Os-0cJ"/>
                                             <outlet property="productPrice" destination="pPz-tZ-kVn" id="eDl-Cb-bJt"/>
                                         </connections>
@@ -87,7 +88,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add products to your 'Wishlist'" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ow6-FJ-ZtO">
-                                <rect key="frame" x="80" y="416" width="233" height="20"/>
+                                <rect key="frame" x="79.666666666666671" y="416" width="233.66666666666663" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.39343535899999998" blue="0.42544671890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>

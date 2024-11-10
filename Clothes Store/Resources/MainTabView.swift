@@ -6,12 +6,12 @@
 //  Copyright © 2024 RichieHope. All rights reserved.
 //
 
+import Combine
 import SwiftUI
 
 struct MainTabView: View {
     @State private var selectedTab = 0
-    @State private var wishlistCount: Int = 3
-    @State private var basketCount: Int = 3
+    @ObservedObject private var storeManager = StoreManager.shared
 
     var body: some View {
         ZStack {
@@ -26,49 +26,29 @@ struct MainTabView: View {
                     .tag(0)
 
                 Group {
-                    if wishlistCount > 0 {
-                        CatalogueView()
-                            .tabItem {
-                                VStack {
-                                    Image(systemName: "heart")
-                                    Text("Wishlist")
-                                }
+                    WishlistViewControllerRepresentable()
+                        .navigationTitle("Wishlist")
+                        .tabItem {
+                            VStack {
+                                Image(systemName: "heart")
+                                Text("Wishlist")
                             }
-                            .badge(wishlistCount)
-                            .tag(1)
-                    } else {
-                        CatalogueView()
-                            .tabItem {
-                                VStack {
-                                    Image(systemName: "heart")
-                                    Text("Wishlist")
-                                }
-                            }
-                            .tag(1)
-                    }
+                        }
+                        .badge(storeManager.wishlistCount)
+                        .tag(1)
                 }
 
                 Group {
-                    if basketCount > 0 {
-                        CatalogueView()
-                            .tabItem {
-                                VStack {
-                                    Image(systemName: "cart")
-                                    Text("Basket")
-                                }
+                    BasketViewControllerRepresentable()
+                        .navigationTitle("Basket")
+                        .tabItem {
+                            VStack {
+                                Image(systemName: "cart")
+                                Text("Basket")
                             }
-                            .badge(basketCount)
-                            .tag(2)
-                    } else {
-                        CatalogueView()
-                            .tabItem {
-                                VStack {
-                                    Image(systemName: "cart")
-                                    Text("Basket")
-                                }
-                            }
-                            .tag(2)
-                    }
+                        }
+                        .badge(storeManager.basketCount)
+                        .tag(2)
                 }
             }
             .accentColor(.red)
@@ -82,8 +62,4 @@ struct MainTabView: View {
                 .shadow(color: .gray.opacity(0.3), radius: 10, x: 0, y: -5)
         )
     }
-}
-
-#Preview {
-    MainTabView()
 }
