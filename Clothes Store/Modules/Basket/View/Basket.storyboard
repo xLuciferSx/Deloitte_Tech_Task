@@ -4,7 +4,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,9 +29,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bPV-J8-jZc">
-                                                    <rect key="frame" x="20" y="22" width="80" height="80"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPV-J8-jZc">
+                                                    <rect key="frame" x="20" y="22" width="80" height="81"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="OrX-fe-BCW">
                                                             <rect key="frame" x="15" y="15" width="50" height="50"/>
@@ -38,39 +39,84 @@
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="Rmj-aO-kvC"/>
+                                                        <constraint firstAttribute="height" constant="80" id="qC2-WD-Oze"/>
+                                                    </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusMe">
                                                             <real key="value" value="40"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJH-tY-gyL">
-                                                    <rect key="frame" x="130" y="22" width="179" height="51"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1T-dE-IM3">
-                                                    <rect key="frame" x="130" y="81" width="130" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="0.39343535899999998" blue="0.42544671890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXy-iW-WkQ">
-                                                    <rect key="frame" x="264" y="81" width="130" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="0.39343535899999998" blue="0.42544671890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="c0G-7b-dZH">
+                                                    <rect key="frame" x="115.99999999999999" y="11" width="52.333333333333329" height="103"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJH-tY-gyL">
+                                                            <rect key="frame" x="0.0" y="0.0" width="43.333333333333336" height="34.333333333333336"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXy-iW-WkQ">
+                                                            <rect key="frame" x="0.0" y="34.333333333333329" width="44.666666666666664" height="34.333333333333329"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="0.39343535899999998" blue="0.42544671890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1T-dE-IM3">
+                                                            <rect key="frame" x="0.0" y="68.666666666666671" width="52.333333333333336" height="34.333333333333329"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                            <color key="textColor" red="1" green="0.39343535899999998" blue="0.42544671890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="YgE-a0-PQj">
+                                                    <rect key="frame" x="244.33333333333334" y="50.666666666666664" width="103.66666666666666" height="23.666666666666664"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAW-Xo-WzU">
+                                                            <rect key="frame" x="0.0" y="0.0" width="25" height="23.666666666666668"/>
+                                                            <color key="tintColor" systemColor="systemRedColor"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal">
+                                                                <imageReference key="image" image="plus.app" catalog="system" symbolScale="large"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="plusTapped:" destination="3NS-nM-zow" eventType="touchUpInside" id="FGT-6f-f2s"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USR-42-2fq">
+                                                            <rect key="frame" x="72.999999999999972" y="0.0" width="30.666666666666671" height="23.666666666666668"/>
+                                                            <color key="tintColor" systemColor="systemRedColor"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" image="minus.rectangle" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="minusTapped:" destination="3NS-nM-zow" eventType="touchUpInside" id="nVA-PA-4Qg"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="c0G-7b-dZH" firstAttribute="leading" secondItem="bPV-J8-jZc" secondAttribute="trailing" constant="16" id="0YJ-y5-ThZ"/>
+                                                <constraint firstItem="bPV-J8-jZc" firstAttribute="leading" secondItem="BTp-eo-Pfd" secondAttribute="leadingMargin" id="6c8-3z-T0y"/>
+                                                <constraint firstItem="bPV-J8-jZc" firstAttribute="top" secondItem="BTp-eo-Pfd" secondAttribute="topMargin" constant="11" id="Har-XT-1Mh"/>
+                                                <constraint firstItem="bPV-J8-jZc" firstAttribute="leading" secondItem="BTp-eo-Pfd" secondAttribute="leadingMargin" id="TFZ-bI-3Dl"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="YgE-a0-PQj" secondAttribute="trailing" constant="25" id="TXX-0u-4TX"/>
+                                                <constraint firstItem="c0G-7b-dZH" firstAttribute="top" secondItem="BTp-eo-Pfd" secondAttribute="topMargin" id="UtM-uB-yAV"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="bPV-J8-jZc" secondAttribute="bottom" constant="11" id="W3Z-ID-hRF"/>
+                                                <constraint firstItem="c0G-7b-dZH" firstAttribute="centerY" secondItem="bPV-J8-jZc" secondAttribute="centerY" id="XCj-Y2-JE5"/>
+                                                <constraint firstItem="YgE-a0-PQj" firstAttribute="centerY" secondItem="c0G-7b-dZH" secondAttribute="centerY" id="jjA-Ut-itZ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="c0G-7b-dZH" secondAttribute="bottom" id="qLY-oV-yRS"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.94622217470000003" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="125" minY="0.0" maxX="20" maxY="0.0"/>
                                         <connections>
                                             <outlet property="cellView" destination="bPV-J8-jZc" id="ymS-Ph-9FJ"/>
+                                            <outlet property="minusButton" destination="USR-42-2fq" id="PrZ-mm-g3J"/>
+                                            <outlet property="plusButton" destination="OAW-Xo-WzU" id="Qub-Q5-9jR"/>
                                             <outlet property="productImage" destination="OrX-fe-BCW" id="Url-hw-SYC"/>
                                             <outlet property="productName" destination="YJH-tY-gyL" id="8L6-ZX-qJI"/>
                                             <outlet property="productPrice" destination="n1T-dE-IM3" id="BmM-is-QlE"/>
@@ -157,6 +203,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="minus.rectangle" catalog="system" width="128" height="93"/>
         <image name="photo" width="100" height="100"/>
+        <image name="plus.app" catalog="system" width="128" height="114"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

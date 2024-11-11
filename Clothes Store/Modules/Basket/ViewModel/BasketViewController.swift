@@ -8,19 +8,17 @@
 
 import UIKit
 
-
 class BasketViewController: UIViewController {
-    
-    //Views
+    // Views
     @IBOutlet var tableView: UITableView!
     @IBOutlet var noProductsLabel: UILabel!
     @IBOutlet var total: UILabel!
     @IBOutlet var checkoutButton: UIButton!
-    
-    //Variables
+
+    // Variables
     var basketItems: [Product] = []
     var basketQuantities: [Product: Int] = [:]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -28,20 +26,20 @@ class BasketViewController: UIViewController {
         setupNotifications()
         checkoutButton.dropShadow(radius: 8, opacity: 0.4, color: UIColor.primaryColour)
     }
-    
+
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
+
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
+
     func setupNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(loadBasket), name: .basketUpdated, object: nil)
     }
-    
+
     @objc func loadBasket() {
         basketItems = Array(StoreManager.shared.basket.keys)
         basketQuantities = StoreManager.shared.basket
@@ -49,7 +47,7 @@ class BasketViewController: UIViewController {
         noProductsLabel.isHidden = !basketItems.isEmpty
         updateTotal()
     }
-    
+
     func updateTotal() {
         let totalCost = StoreManager.shared.basketTotal
         total.text = "Total: \(CurrencyHelper.getMoneyString(totalCost))"
@@ -69,7 +67,7 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
         let product = basketItems[indexPath.row]
         let quantity = basketQuantities[product] ?? 1
         cell.configureWithProduct(product: product, quantity: quantity)
-        //cell.delegate = self
+        cell.delegate = self
         return cell
     }
 
@@ -99,3 +97,14 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+extension BasketViewController: BasketCellDelegate {
+    func didTapPlus(for product: Product) {
+        StoreManager.shared.addToBasket(product)
+        loadBasket()
+    }
+
+    func didTapMinus(for product: Product) {
+        StoreManager.shared.removeFromBasket(product)
+        loadBasket()
+    }
+}

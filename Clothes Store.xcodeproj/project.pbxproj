@@ -16,8 +16,7 @@
 		1F0009B62CE1403800F7BFD6 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1F0009B52CE1403800F7BFD6 /* Kingfisher */; };
 		1F0009D62CE1452300F7BFD6 /* Storyboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0009D52CE1452300F7BFD6 /* Storyboard+Extensions.swift */; };
 		1F0009DB2CE14B4100F7BFD6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0009DA2CE14B3D00F7BFD6 /* CoreDataManager.swift */; };
-		1F0009DE2CE14B7200F7BFD6 /* ClothesStoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F0009DC2CE14B7200F7BFD6 /* ClothesStoreData.xcdatamodeld */; };
-		1F0009E12CE14BC400F7BFD6 /* ProductEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0009E02CE14BC400F7BFD6 /* ProductEntity.swift */; };
+		1F1C43E02CE28F260036D340 /* ClothesStoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C43DE2CE28F260036D340 /* ClothesStoreData.xcdatamodeld */; };
 		BE5F27F822F035AF00F2C97D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F27F722F035AF00F2C97D /* AppDelegate.swift */; };
 		BE5F27FA22F035AF00F2C97D /* CatalogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F27F922F035AF00F2C97D /* CatalogueViewController.swift */; };
 		BE5F27FF22F035AF00F2C97D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5F27FD22F035AF00F2C97D /* Main.storyboard */; };
@@ -53,8 +52,7 @@
 		1F0009C92CE1438800F7BFD6 /* Clothes StoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Clothes StoreTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F0009D52CE1452300F7BFD6 /* Storyboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Extensions.swift"; sourceTree = "<group>"; };
 		1F0009DA2CE14B3D00F7BFD6 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		1F0009DD2CE14B7200F7BFD6 /* ClothesStoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClothesStoreData.xcdatamodel; sourceTree = "<group>"; };
-		1F0009E02CE14BC400F7BFD6 /* ProductEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEntity.swift; sourceTree = "<group>"; };
+		1F1C43DF2CE28F260036D340 /* ClothesStoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClothesStoreData.xcdatamodel; sourceTree = "<group>"; };
 		BE5F27F422F035AF00F2C97D /* Clothes Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clothes Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5F27F722F035AF00F2C97D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE5F27F922F035AF00F2C97D /* CatalogueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueViewController.swift; sourceTree = "<group>"; };
@@ -118,12 +116,12 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		1F0009DF2CE14BBB00F7BFD6 /* CoreDate_Models */ = {
+		1F1C43DB2CE28F090036D340 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				1F0009E02CE14BC400F7BFD6 /* ProductEntity.swift */,
+				1F1C43DE2CE28F260036D340 /* ClothesStoreData.xcdatamodeld */,
 			);
-			path = CoreDate_Models;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		BE5F27EB22F035AF00F2C97D = {
@@ -149,7 +147,6 @@
 			children = (
 				1F0009AF2CE1309D00F7BFD6 /* Managers */,
 				1F0009802CE11E2200F7BFD6 /* Modules */,
-				BE5F282922F24D9A00F2C97D /* Models */,
 				BE5F282B22F24DC500F2C97D /* Controllers */,
 				BE5F282C22F24E2100F2C97D /* Helpers */,
 				BE5F283322F2506600F2C97D /* Resources */,
@@ -161,7 +158,7 @@
 		BE5F282922F24D9A00F2C97D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1F0009DF2CE14BBB00F7BFD6 /* CoreDate_Models */,
+				1F1C43DB2CE28F090036D340 /* CoreData */,
 				BE5F280D22F05C8600F2C97D /* Product.swift */,
 				BE5F280F22F05D0300F2C97D /* Constants.swift */,
 				BE5F280B22F05C3E00F2C97D /* DataService.swift */,
@@ -183,6 +180,7 @@
 		BE5F282C22F24E2100F2C97D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				BE5F282922F24D9A00F2C97D /* Models */,
 				1F0009D72CE1453C00F7BFD6 /* Extensions */,
 				BE5F281122F05FFA00F2C97D /* CurrencyHelpers.swift */,
 				BE5F281322F068C500F2C97D /* UIView+Extensions.swift */,
@@ -201,7 +199,6 @@
 				BE5F280022F035B100F2C97D /* Assets.xcassets */,
 				BE5F280222F035B100F2C97D /* LaunchScreen.storyboard */,
 				1F0009732CE11A7400F7BFD6 /* MainTabView.swift */,
-				1F0009DC2CE14B7200F7BFD6 /* ClothesStoreData.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -347,15 +344,14 @@
 				1F0009722CE119BD00F7BFD6 /* Coordinator.swift in Sources */,
 				BE5F27F822F035AF00F2C97D /* AppDelegate.swift in Sources */,
 				BE5F27FA22F035AF00F2C97D /* CatalogueViewController.swift in Sources */,
-				1F0009E12CE14BC400F7BFD6 /* ProductEntity.swift in Sources */,
 				BE5F281222F05FFA00F2C97D /* CurrencyHelpers.swift in Sources */,
 				BE5F282422F1A13600F2C97D /* HUD.swift in Sources */,
 				BE5F281E22F0E00800F2C97D /* ProductDetailTableViewController.swift in Sources */,
 				BE5F280C22F05C3E00F2C97D /* DataService.swift in Sources */,
 				BE5F280E22F05C8600F2C97D /* Product.swift in Sources */,
 				1F0009B32CE130D700F7BFD6 /* NNSNotificationName+Extensions.swift in Sources */,
+				1F1C43E02CE28F260036D340 /* ClothesStoreData.xcdatamodeld in Sources */,
 				1F0009B12CE130AA00F7BFD6 /* StoreManager.swift in Sources */,
-				1F0009DE2CE14B7200F7BFD6 /* ClothesStoreData.xcdatamodeld in Sources */,
 				BE5F281422F068C500F2C97D /* UIView+Extensions.swift in Sources */,
 				1F0009DB2CE14B4100F7BFD6 /* CoreDataManager.swift in Sources */,
 				BE5F281022F05D0300F2C97D /* Constants.swift in Sources */,
@@ -676,12 +672,12 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		1F0009DC2CE14B7200F7BFD6 /* ClothesStoreData.xcdatamodeld */ = {
+		1F1C43DE2CE28F260036D340 /* ClothesStoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				1F0009DD2CE14B7200F7BFD6 /* ClothesStoreData.xcdatamodel */,
+				1F1C43DF2CE28F260036D340 /* ClothesStoreData.xcdatamodel */,
 			);
-			currentVersion = 1F0009DD2CE14B7200F7BFD6 /* ClothesStoreData.xcdatamodel */;
+			currentVersion = 1F1C43DF2CE28F260036D340 /* ClothesStoreData.xcdatamodel */;
 			path = ClothesStoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -9,6 +9,11 @@
 import Kingfisher
 import UIKit
 
+protocol BasketCellDelegate: AnyObject {
+    func didTapPlus(for product: Product)
+    func didTapMinus(for product: Product)
+}
+
 class BasketViewTableViewCell: UITableViewCell {
     // Views
     @IBOutlet var cellView: UIView!
@@ -16,9 +21,11 @@ class BasketViewTableViewCell: UITableViewCell {
     @IBOutlet var productPrice: UILabel!
     @IBOutlet var productImage: UIImageView!
     @IBOutlet var quantity: UILabel!
+    @IBOutlet var plusButton: UIButton!
+    @IBOutlet var minusButton: UIButton!
 
     // Variables
-    weak var delegate: BuyCellButtonTapped?
+    weak var delegate: BasketCellDelegate?
     private var product: Product?
 
     func configureWithProduct(product: Product, quantity: Int) {
@@ -42,5 +49,15 @@ class BasketViewTableViewCell: UITableViewCell {
         self.quantity.text = "Qty: \(quantity)"
 
         cellView.dropShadow(radius: 10, opacity: 0.1, color: .black)
+    }
+
+    @IBAction func plusTapped(_ sender: Any) {
+        guard let product = product else { return }
+        delegate?.didTapPlus(for: product)
+    }
+
+    @IBAction func minusTapped(_ sender: Any) {
+        guard let product = product else { return }
+        delegate?.didTapMinus(for: product)
     }
 }

@@ -12,7 +12,10 @@ import Foundation
 class StoreManager: ObservableObject {
     static let shared = StoreManager()
     
-    private init() {}
+    private init() {
+        loadWishlist()
+        loadBasket()
+    }
     
     @Published private(set) var wishlist: Set<Product> = []
     @Published private(set) var basket: [Product: Int] = [:]
@@ -27,18 +30,29 @@ class StoreManager: ObservableObject {
         }
     }
     
+    private func loadWishlist() {
+        wishlist = Set(CoreDataManager.shared.fetchWishlist())
+        wishlistCount = wishlist.count
+    }
+    
+    private func loadBasket() {
+        let basketData = CoreDataManager.shared.fetchBasket()
+        basket = Dictionary(uniqueKeysWithValues: basketData.map { ($0.product, $0.quantity) })
+        basketCount = basket.values.reduce(0, +)
+    }
+    
     func addToWishlist(_ product: Product) -> Bool {
-        if wishlist.contains(where: { $0.productId == product.productId }) {
-            return false
+        let added = wishlist.insert(product).inserted
+        if added {
+            CoreDataManager.shared.saveProductToWishlist(product)
+            updateCounts()
         }
-        
-        wishlist.insert(product)
-        updateCounts()
-        return true
+        return added
     }
     
     func removeFromWishlist(_ product: Product) {
         wishlist.remove(product)
+        CoreDataManager.shared.removeProductFromWishlist(product)
         updateCounts()
     }
     
@@ -46,15 +60,13 @@ class StoreManager: ObservableObject {
         guard let stock = product.stock, stock > 0 else {
             return false
         }
-        
-        if var quantity = basket[product] {
-            quantity += 1
-            basket[product] = quantity
+
+        if let quantity = basket[product] {
+            basket[product] = quantity + 1
         } else {
             basket[product] = 1
         }
-        
-        updateStock(for: product, decrement: true)
+        CoreDataManager.shared.saveProductToBasket(product, quantity: basket[product]!)
         updateCounts()
         return true
     }
@@ -62,11 +74,11 @@ class StoreManager: ObservableObject {
     func removeFromBasket(_ product: Product) {
         if let quantity = basket[product], quantity > 1 {
             basket[product] = quantity - 1
+            CoreDataManager.shared.saveProductToBasket(product, quantity: basket[product]!)
         } else {
             basket.removeValue(forKey: product)
+            CoreDataManager.shared.removeProductFromBasket(product)
         }
-        
-        updateStock(for: product, decrement: false)
         updateCounts()
     }
     
@@ -96,5 +108,6 @@ class StoreManager: ObservableObject {
     private func updateCounts() {
         wishlistCount = wishlist.count
         basketCount = basket.values.reduce(0, +)
+        NotificationCenter.default.post(name: .basketUpdated, object: nil)
     }
 }

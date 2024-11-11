@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol BuyCellButtonTapped: AnyObject {
-    func addProductToBasket(_ sender: SavedViewTableViewCell)
-}
-
 class WishlistViewController: UIViewController, BuyCellButtonTapped {
     // Views
     @IBOutlet var tableView: UITableView!

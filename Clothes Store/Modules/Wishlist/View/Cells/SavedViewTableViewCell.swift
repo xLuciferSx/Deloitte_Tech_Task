@@ -9,6 +9,10 @@
 import UIKit
 import Kingfisher
 
+protocol BuyCellButtonTapped: AnyObject {
+    func addProductToBasket(_ sender: SavedViewTableViewCell)
+}
+
 class SavedViewTableViewCell: UITableViewCell{
 
     //Views
