@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Factory
 
 class BasketViewController: UIViewController {
+    @Injected(\.storeManager) var storeManager
     // Views
     @IBOutlet var tableView: UITableView!
     @IBOutlet var noProductsLabel: UILabel!
@@ -41,15 +43,15 @@ class BasketViewController: UIViewController {
     }
 
     @objc func loadBasket() {
-        basketItems = Array(StoreManager.shared.basket.keys)
-        basketQuantities = StoreManager.shared.basket
+        basketItems = Array(storeManager.basket.keys)
+        basketQuantities = storeManager.basket
         tableView.reloadData()
         noProductsLabel.isHidden = !basketItems.isEmpty
         updateTotal()
     }
 
     func updateTotal() {
-        let totalCost = StoreManager.shared.basketTotal
+        let totalCost = storeManager.basketTotal
         total.text = "Total: \(CurrencyHelper.getMoneyString(totalCost))"
     }
 }
@@ -83,7 +85,7 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
         let deleteAction = UIContextualAction(style: .destructive, title: "Remove") { [weak self] _, _, completion in
             guard let self = self else { return }
             let product = self.basketItems[indexPath.row]
-            StoreManager.shared.removeFromBasket(product)
+            storeManager.removeFromBasket(product)
             self.loadBasket()
             Haptic.feedBack()
             completion(true)
@@ -99,12 +101,12 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension BasketViewController: BasketCellDelegate {
     func didTapPlus(for product: Product) {
-        StoreManager.shared.addToBasket(product)
+        storeManager.addToBasket(product)
         loadBasket()
     }
 
     func didTapMinus(for product: Product) {
-        StoreManager.shared.removeFromBasket(product)
+        storeManager.removeFromBasket(product)
         loadBasket()
     }
 }

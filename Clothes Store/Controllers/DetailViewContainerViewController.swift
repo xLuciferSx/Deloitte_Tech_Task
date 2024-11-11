@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Factory
 
 protocol DetailViewContainerDelegate: AnyObject {
     func didCloseDetailView()
 }
 
-class DetailViewContainerViewController: UIViewController{
+class DetailViewContainerViewController: UIViewController {
+    @Injected(\.storeManager) var storeManager
 
     //Views
     var backButton : UIBarButtonItem!
@@ -37,10 +39,10 @@ class DetailViewContainerViewController: UIViewController{
     }
     
     func updateUI() {
-        let isInWishlist = StoreManager.shared.wishlist.contains(product)
+        let isInWishlist = storeManager.wishlist.contains(product)
         addedToWishlistLabel.isHidden = !isInWishlist
 
-        let isInBasket = StoreManager.shared.basket[product] != nil
+        let isInBasket = storeManager.basket[product] != nil
         addedToBasketLabel.isHidden = !isInBasket
     }
 
@@ -61,11 +63,11 @@ class DetailViewContainerViewController: UIViewController{
 
     @IBAction func addToCartAction(_ sender: Any) {
         Haptic.feedBack()
-        let success = StoreManager.shared.addToBasket(product)
+        let success = storeManager.addToBasket(product)
         if success {
             addedToBasketLabel.isHidden = false
             addedToWishlistLabel.isHidden = true
-            StoreManager.shared.removeFromWishlist(product)
+            storeManager.removeFromWishlist(product)
             NotificationCenter.default.post(name: .basketUpdated, object: nil)
             showAlert(title: "Added to Basket", message: "\(product.name) has been added to your basket.")
         } else {
@@ -75,7 +77,7 @@ class DetailViewContainerViewController: UIViewController{
 
     @IBAction func addToWishListAction(_ sender: Any) {
         Haptic.feedBack()
-        let success = StoreManager.shared.addToWishlist(product)
+        let success = storeManager.addToWishlist(product)
         if success {
             addedToWishlistLabel.isHidden = false
             showAlert(title: "Added to Wishlist", message: "\(product.name) has been added to your wishlist.")

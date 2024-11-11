@@ -8,8 +8,11 @@
 
 import Combine
 import Foundation
+import Factory
 
 class StoreManager: ObservableObject {
+    @Injected(\.coreDataManager) var coreDataManager
+    
     static let shared = StoreManager()
     
     private init() {
@@ -31,12 +34,12 @@ class StoreManager: ObservableObject {
     }
     
     private func loadWishlist() {
-        wishlist = Set(CoreDataManager.shared.fetchWishlist())
+        wishlist = Set(coreDataManager.fetchWishlist())
         wishlistCount = wishlist.count
     }
     
     private func loadBasket() {
-        let basketData = CoreDataManager.shared.fetchBasket()
+        let basketData = coreDataManager.fetchBasket()
         basket = Dictionary(uniqueKeysWithValues: basketData.map { ($0.product, $0.quantity) })
         basketCount = basket.values.reduce(0, +)
     }
@@ -44,7 +47,7 @@ class StoreManager: ObservableObject {
     func addToWishlist(_ product: Product) -> Bool {
         let added = wishlist.insert(product).inserted
         if added {
-            CoreDataManager.shared.saveProductToWishlist(product)
+            coreDataManager.saveProductToWishlist(product)
             updateCounts()
         }
         return added
@@ -52,7 +55,7 @@ class StoreManager: ObservableObject {
     
     func removeFromWishlist(_ product: Product) {
         wishlist.remove(product)
-        CoreDataManager.shared.removeProductFromWishlist(product)
+        coreDataManager.removeProductFromWishlist(product)
         updateCounts()
     }
     
@@ -66,7 +69,7 @@ class StoreManager: ObservableObject {
         } else {
             basket[product] = 1
         }
-        CoreDataManager.shared.saveProductToBasket(product, quantity: basket[product]!)
+        coreDataManager.saveProductToBasket(product, quantity: basket[product]!)
         updateCounts()
         return true
     }
@@ -74,10 +77,10 @@ class StoreManager: ObservableObject {
     func removeFromBasket(_ product: Product) {
         if let quantity = basket[product], quantity > 1 {
             basket[product] = quantity - 1
-            CoreDataManager.shared.saveProductToBasket(product, quantity: basket[product]!)
+            coreDataManager.saveProductToBasket(product, quantity: basket[product]!)
         } else {
             basket.removeValue(forKey: product)
-            CoreDataManager.shared.removeProductFromBasket(product)
+            coreDataManager.removeProductFromBasket(product)
         }
         updateCounts()
     }

@@ -7,7 +7,6 @@
 //
 
 import CoreData
-@testable import Clothes_Store
 
 class MockCoreDataManager: CoreDataManager {
 

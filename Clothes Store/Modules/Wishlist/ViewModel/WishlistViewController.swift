@@ -6,9 +6,12 @@
 //  Copyright © 2021 Deloitte. All rights reserved.
 //
 
+import Factory
 import UIKit
 
 class WishlistViewController: UIViewController, BuyCellButtonTapped {
+    @Injected(\.storeManager) var storeManager
+
     // Views
     @IBOutlet var tableView: UITableView!
     @IBOutlet var noProductsLabel: UILabel!
@@ -33,7 +36,7 @@ class WishlistViewController: UIViewController, BuyCellButtonTapped {
     }
 
     @objc func loadWishlist() {
-        wishlistProducts = Array(StoreManager.shared.wishlist)
+        wishlistProducts = Array(storeManager.wishlist)
         tableView.reloadData()
         noProductsLabel.isHidden = !wishlistProducts.isEmpty
     }
@@ -44,9 +47,9 @@ class WishlistViewController: UIViewController, BuyCellButtonTapped {
         Haptic.feedBack()
         guard let indexPath = tableView.indexPath(for: sender) else { return }
         let product = wishlistProducts[indexPath.row]
-        let success = StoreManager.shared.addToBasket(product)
+        let success = storeManager.addToBasket(product)
         if success {
-            StoreManager.shared.removeFromWishlist(product)
+            storeManager.removeFromWishlist(product)
             loadWishlist()
             NotificationCenter.default.post(name: .basketUpdated, object: nil)
             showAlert(title: "Added to Basket", message: "\(product.name) has been added to your basket.")
@@ -88,20 +91,20 @@ extension WishlistViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Remove") { [weak self] _, _, completionHandler in
-               guard let self = self else { return }
+            guard let self = self else { return }
 
-               Haptic.feedBack()
+            Haptic.feedBack()
 
-               let product = self.wishlistProducts[indexPath.row]
-               
-               StoreManager.shared.removeFromWishlist(product)
-               
-               self.wishlistProducts.remove(at: indexPath.row)
-               tableView.deleteRows(at: [indexPath], with: .automatic)
-               self.noProductsLabel.isHidden = !self.wishlistProducts.isEmpty
-               
-               completionHandler(true)
-           }
+            let product = self.wishlistProducts[indexPath.row]
+
+            storeManager.removeFromWishlist(product)
+
+            self.wishlistProducts.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            self.noProductsLabel.isHidden = !self.wishlistProducts.isEmpty
+
+            completionHandler(true)
+        }
 
         deleteAction.backgroundColor = UIColor.primaryColour
 
