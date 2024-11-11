@@ -41,6 +41,39 @@
                ReferencedContainer = "container:Clothes Store.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1FA11E022CE2B35C0049A487"
+               BuildableName = "Clothes StoreUITests.xctest"
+               BlueprintName = "Clothes StoreUITests"
+               ReferencedContainer = "container:Clothes Store.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1FA11E1F2CE2B3BA0049A487"
+               BuildableName = "Clothes StoreUnitTests.xctest"
+               BlueprintName = "Clothes StoreUnitTests"
+               ReferencedContainer = "container:Clothes Store.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1FA11E692CE2B89D0049A487"
+               BuildableName = "ClothesStore_UnitTests.xctest"
+               BlueprintName = "ClothesStore_UnitTests"
+               ReferencedContainer = "container:Clothes Store.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

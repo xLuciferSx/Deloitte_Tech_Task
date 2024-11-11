@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Basket-->
+        <!--Basket View Controller-->
         <scene sceneID="5ZS-Qr-Vcl">
             <objects>
                 <viewController storyboardIdentifier="BasketViewController" id="i6g-6w-u6R" customClass="BasketViewController" customModule="Clothes_Store" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,7 +20,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KkI-8j-yzu">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="776"/>
-                                <color key="backgroundColor" white="0.9511183647" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="basketCell" rowHeight="125" id="3NS-nM-zow" customClass="BasketViewTableViewCell" customModule="Clothes_Store" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="125"/>
@@ -176,7 +176,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ogQ-iu-NBm"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="KkI-8j-yzu" firstAttribute="leading" secondItem="ogQ-iu-NBm" secondAttribute="leading" id="0y4-Gq-jmg"/>
                             <constraint firstItem="KkI-8j-yzu" firstAttribute="top" secondItem="a6W-iz-5hh" secondAttribute="top" id="3Oi-Xx-JBQ"/>
@@ -189,7 +189,6 @@
                             <constraint firstItem="Fnt-As-WSv" firstAttribute="leading" secondItem="ogQ-iu-NBm" secondAttribute="leading" id="pJm-MR-xrX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Basket" id="s8g-d1-0kM"/>
                     <connections>
                         <outlet property="checkoutButton" destination="hhD-8o-lK5" id="s06-0Z-eBe"/>
                         <outlet property="noProductsLabel" destination="g3f-Lh-NNq" id="kWD-8t-f1n"/>
@@ -199,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5d-RT-BJ3" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1883" y="985"/>
+            <point key="canvasLocation" x="1471" y="979"/>
         </scene>
     </scenes>
     <resources>

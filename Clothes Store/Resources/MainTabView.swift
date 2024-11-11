@@ -27,7 +27,7 @@ struct MainTabView: View {
 
                 Group {
                     WishlistViewControllerRepresentable()
-                        .navigationTitle("Wishlist")
+                        .ignoresSafeArea()
                         .tabItem {
                             VStack {
                                 Image(systemName: "heart")
@@ -40,7 +40,7 @@ struct MainTabView: View {
 
                 Group {
                     BasketViewControllerRepresentable()
-                        .navigationTitle("Basket")
+                        .ignoresSafeArea()
                         .tabItem {
                             VStack {
                                 Image(systemName: "cart")

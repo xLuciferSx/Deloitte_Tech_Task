@@ -11,7 +11,7 @@ import CoreData
 class CoreDataManager {
     static let shared = CoreDataManager()
 
-    private init() {}
+    init() {}
 
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "ClothesStoreData")

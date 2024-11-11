@@ -9,7 +9,6 @@
 import UIKit
 
 enum StoryboardName: String {
-    case main = "Main"
     case productDetail = "ProductDetail"
     case wishlist = "Wishlist"
     case basket = "Basket"
