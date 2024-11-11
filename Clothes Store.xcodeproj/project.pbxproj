@@ -22,7 +22,6 @@
 		1F8B767E2CE2BD0B00CF2AE1 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 1F8B767D2CE2BD0B00CF2AE1 /* Factory */; };
 		1FA11E2F2CE2B42F0049A487 /* MockCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA11E2E2CE2B4290049A487 /* MockCoreDataManager.swift */; };
 		BE5F27F822F035AF00F2C97D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F27F722F035AF00F2C97D /* AppDelegate.swift */; };
-		BE5F27FA22F035AF00F2C97D /* CatalogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F27F922F035AF00F2C97D /* CatalogueViewController.swift */; };
 		BE5F280122F035B100F2C97D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE5F280022F035B100F2C97D /* Assets.xcassets */; };
 		BE5F280422F035B100F2C97D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5F280222F035B100F2C97D /* LaunchScreen.storyboard */; };
 		BE5F280C22F05C3E00F2C97D /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F280B22F05C3E00F2C97D /* DataService.swift */; };
@@ -30,11 +29,8 @@
 		BE5F281022F05D0300F2C97D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F280F22F05D0300F2C97D /* Constants.swift */; };
 		BE5F281222F05FFA00F2C97D /* CurrencyHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F281122F05FFA00F2C97D /* CurrencyHelpers.swift */; };
 		BE5F281422F068C500F2C97D /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F281322F068C500F2C97D /* UIView+Extensions.swift */; };
-		BE5F281E22F0E00800F2C97D /* ProductDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F281D22F0E00800F2C97D /* ProductDetailTableViewController.swift */; };
-		BE5F282022F0E4C600F2C97D /* DetailViewContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F281F22F0E4C600F2C97D /* DetailViewContainerViewController.swift */; };
 		BE5F282222F19C0300F2C97D /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F282122F19C0200F2C97D /* HapticFeedback.swift */; };
 		BE5F282422F1A13600F2C97D /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F282322F1A13600F2C97D /* HUD.swift */; };
-		BE5F282622F1F4A400F2C97D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5F282522F1F4A400F2C97D /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +57,6 @@
 		1FA11E6A2CE2B89D0049A487 /* ClothesStore_UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClothesStore_UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5F27F422F035AF00F2C97D /* Clothes Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clothes Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5F27F722F035AF00F2C97D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BE5F27F922F035AF00F2C97D /* CatalogueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueViewController.swift; sourceTree = "<group>"; };
 		BE5F280022F035B100F2C97D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE5F280322F035B100F2C97D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE5F280522F035B100F2C97D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -70,11 +65,8 @@
 		BE5F280F22F05D0300F2C97D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BE5F281122F05FFA00F2C97D /* CurrencyHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyHelpers.swift; sourceTree = "<group>"; };
 		BE5F281322F068C500F2C97D /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		BE5F281D22F0E00800F2C97D /* ProductDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailTableViewController.swift; sourceTree = "<group>"; };
-		BE5F281F22F0E4C600F2C97D /* DetailViewContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewContainerViewController.swift; sourceTree = "<group>"; };
 		BE5F282122F19C0200F2C97D /* HapticFeedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
 		BE5F282322F1A13600F2C97D /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
-		BE5F282522F1F4A400F2C97D /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -163,7 +155,6 @@
 				1FA11E2D2CE2B4240049A487 /* Mocks */,
 				1F0009AF2CE1309D00F7BFD6 /* Managers */,
 				1F0009802CE11E2200F7BFD6 /* Modules */,
-				BE5F282B22F24DC500F2C97D /* Controllers */,
 				BE5F282C22F24E2100F2C97D /* Helpers */,
 				BE5F283322F2506600F2C97D /* Resources */,
 				BE5F283422F2508700F2C97D /* Supporting Files */,
@@ -180,17 +171,6 @@
 				BE5F280B22F05C3E00F2C97D /* DataService.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		BE5F282B22F24DC500F2C97D /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				BE5F281D22F0E00800F2C97D /* ProductDetailTableViewController.swift */,
-				BE5F281F22F0E4C600F2C97D /* DetailViewContainerViewController.swift */,
-				BE5F27F922F035AF00F2C97D /* CatalogueViewController.swift */,
-				BE5F282522F1F4A400F2C97D /* TabBarController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		BE5F282C22F24E2100F2C97D /* Helpers */ = {
@@ -354,17 +334,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE5F282622F1F4A400F2C97D /* TabBarController.swift in Sources */,
 				BE5F282222F19C0300F2C97D /* HapticFeedback.swift in Sources */,
-				BE5F282022F0E4C600F2C97D /* DetailViewContainerViewController.swift in Sources */,
 				1F0009D62CE1452300F7BFD6 /* Storyboard+Extensions.swift in Sources */,
 				1F0009722CE119BD00F7BFD6 /* Coordinator.swift in Sources */,
 				BE5F27F822F035AF00F2C97D /* AppDelegate.swift in Sources */,
-				BE5F27FA22F035AF00F2C97D /* CatalogueViewController.swift in Sources */,
 				1F8B76742CE2BAF100CF2AE1 /* MockStoreManager.swift in Sources */,
 				BE5F281222F05FFA00F2C97D /* CurrencyHelpers.swift in Sources */,
 				BE5F282422F1A13600F2C97D /* HUD.swift in Sources */,
-				BE5F281E22F0E00800F2C97D /* ProductDetailTableViewController.swift in Sources */,
 				BE5F280C22F05C3E00F2C97D /* DataService.swift in Sources */,
 				BE5F280E22F05C8600F2C97D /* Product.swift in Sources */,
 				1F0009B32CE130D700F7BFD6 /* NNSNotificationName+Extensions.swift in Sources */,

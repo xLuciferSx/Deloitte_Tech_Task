@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -59,18 +60,26 @@
                                                     <color key="textColor" red="1" green="0.39343535899999998" blue="0.42544671890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3y-rQ-bdj">
-                                                    <rect key="frame" x="311" y="0.0" width="82" height="67"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3y-rQ-bdj">
+                                                    <rect key="frame" x="313" y="32.666666666666664" width="80" height="59.999999999999993"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="Dui-sA-r6d"/>
+                                                        <constraint firstAttribute="height" constant="60" id="eZ6-mZ-pHW"/>
+                                                    </constraints>
                                                     <color key="tintColor" red="1" green="0.39343535899999998" blue="0.42544671890000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <state key="normal" image="addToBasket">
+                                                    <state key="normal">
                                                         <color key="titleColor" red="0.85413116219999996" green="0.36529368159999998" blue="0.33323866130000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <imageReference key="image" image="cart.badge.plus.fill" catalog="system" symbolScale="large"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="addToBasket:" destination="sGu-CJ-m7k" eventType="touchUpInside" id="VBw-tJ-U2K"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="a3y-rQ-bdj" firstAttribute="centerY" secondItem="8bA-PX-vGT" secondAttribute="centerY" id="sHl-zR-DGD"/>
+                                                <constraint firstAttribute="trailing" secondItem="a3y-rQ-bdj" secondAttribute="trailing" id="txc-MV-FLO"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.94622217470000003" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="125" minY="0.0" maxX="20" maxY="0.0"/>
@@ -113,7 +122,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="addToBasket" width="32" height="32"/>
+        <image name="cart.badge.plus.fill" catalog="system" width="128" height="106"/>
         <image name="photo" width="100" height="100"/>
     </resources>
 </document>
