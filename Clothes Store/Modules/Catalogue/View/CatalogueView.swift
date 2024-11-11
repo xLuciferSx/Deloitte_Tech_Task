@@ -1,4 +1,3 @@
-
 //
 //  CatalogueView.swift
 //  Clothes Store
@@ -17,6 +16,11 @@ struct CatalogueView: View {
     var body: some View {
         NavigationView {
             VStack {
+                TextField("Search for products...", text: $viewModel.searchQuery)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(.horizontal)
+                    .padding(.top)
+
                 if viewModel.isLoading {
                     ProgressView("Loading...")
                 } else if let errorMessage = viewModel.errorMessage {
@@ -26,7 +30,7 @@ struct CatalogueView: View {
                 } else {
                     ScrollView {
                         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
-                            ForEach(viewModel.products, id: \.id) { product in
+                            ForEach(viewModel.filteredProducts, id: \.id) { product in
                                 ProductCardView(product: product)
                                     .onTapGesture {
                                         selectedProduct = product

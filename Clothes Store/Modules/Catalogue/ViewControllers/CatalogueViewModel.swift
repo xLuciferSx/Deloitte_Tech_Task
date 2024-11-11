@@ -6,13 +6,21 @@
 //  Copyright © 2024 RichieHope. All rights reserved.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 class CatalogueViewModel: ObservableObject {
     @Published var products: [Product] = []
-    @Published var isLoading: Bool = true
-    @Published var errorMessage: String? = nil
+    @Published var searchQuery: String = ""
+    @Published private(set) var filteredProducts: [Product] = []
+    @Published private(set) var isLoading: Bool = false
+    @Published private(set) var errorMessage: String?
+
+    private var cancellables = Set<AnyCancellable>()
+
+    init() {
+        setupSearchBinding()
+    }
 
     func fetchProducts() {
         isLoading = true
@@ -23,10 +31,24 @@ class CatalogueViewModel: ObservableObject {
                     self?.errorMessage = error.localizedDescription
                 } else if let productsData = products {
                     self?.products = productsData.products ?? []
+                    self?.filteredProducts = self?.products ?? []
                 } else {
-                    self?.errorMessage = "Unknown error occurred"
+                    self?.errorMessage = "Something went wrong"
                 }
             }
         }
+    }
+
+    private func setupSearchBinding() {
+        $searchQuery
+            .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
+            .removeDuplicates()
+            .combineLatest($products)
+            .map { query, products in
+                products.filter { product in
+                    query.isEmpty || product.name.localizedCaseInsensitiveContains(query)
+                }
+            }
+            .assign(to: &$filteredProducts)
     }
 }
