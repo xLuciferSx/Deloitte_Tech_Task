@@ -77,6 +77,6 @@ class StoreManager_Tests: XCTestCase {
         _ = mockStoreManager.addToBasket(product2)
         _ = mockStoreManager.addToBasket(product2)
         
-        XCTAssertEqual(mockStoreManager.basketTotal, 65.0) // 15 + (25 * 2)
+        XCTAssertEqual(mockStoreManager.basketTotal, 65.0)
     }
 }
