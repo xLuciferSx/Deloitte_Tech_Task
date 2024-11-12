@@ -16,3 +16,13 @@
 "search_placeholder" = "Search for products...";
 "loading_text" = "Loading...";
 "error_prefix" = "Error:";
+"generic_error_message" = "Something went wrong!";
+"added_to_basket_title" = "Added to Basket";
+"added_to_basket_message" = "%@ has been added to your basket.";
+"out_of_stock_title" = "Out of Stock";
+"out_of_stock_message" = "This product is out of stock and cannot be added to the basket.";
+"added_to_wishlist_title" = "Added to Wishlist";
+"added_to_wishlist_message" = "%@ has been added to your wishlist.";
+"already_in_wishlist_title" = "Already in Wishlist";
+"already_in_wishlist_message" = "%@ is already in your wishlist.";
+"ok_button" = "OK";

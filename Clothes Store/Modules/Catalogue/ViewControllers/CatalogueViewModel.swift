@@ -33,7 +33,7 @@ class CatalogueViewModel: ObservableObject {
                     self?.products = productsData.products ?? []
                     self?.filteredProducts = self?.products ?? []
                 } else {
-                    self?.errorMessage = "Something went wrong"
+                    self?.errorMessage = "generic_error_message".localized
                 }
             }
         }

@@ -52,7 +52,7 @@ class BasketViewController: UIViewController {
 
     func updateTotal() {
         let totalCost = storeManager.basketTotal
-        total.text = "Total: \(CurrencyHelper.getMoneyString(totalCost))"
+        total.text = "total_cost".localized(with: CurrencyHelper.getMoneyString(totalCost))
     }
 }
 
@@ -101,7 +101,7 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension BasketViewController: BasketCellDelegate {
     func didTapPlus(for product: Product) {
-        storeManager.addToBasket(product)
+        _ = storeManager.addToBasket(product)
         loadBasket()
     }
 
