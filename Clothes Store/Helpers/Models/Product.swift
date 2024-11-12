@@ -23,6 +23,7 @@ struct Product: Codable, Identifiable, Hashable {
     var stock: Int?
     var oldPrice: Float?
     var image: String?
+    var isWishlisted: Bool?
 
     var id: String { productId }
 

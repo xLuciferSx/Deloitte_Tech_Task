@@ -82,7 +82,7 @@ extension BasketViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "Remove") { [weak self] _, _, completion in
+        let deleteAction = UIContextualAction(style: .destructive, title: "remove".localized) { [weak self] _, _, completion in
             guard let self = self else { return }
             let product = self.basketItems[indexPath.row]
             storeManager.removeFromBasket(product)

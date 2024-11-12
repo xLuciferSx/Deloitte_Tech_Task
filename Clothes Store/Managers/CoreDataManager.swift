@@ -55,6 +55,7 @@ extension CoreDataManager {
             newProduct.stock = Int16(product.stock ?? 0)
             newProduct.oldPrice = product.oldPrice ?? 0
             newProduct.image = product.image
+            newProduct.isWishlisted = product.isWishlisted ?? false
             return newProduct
         }
     }
@@ -67,7 +68,9 @@ extension CoreDataManager {
             price: productEntity.price,
             stock: Int(productEntity.stock),
             oldPrice: productEntity.oldPrice,
-            image: productEntity.image
+            image: productEntity.image,
+            isWishlisted: productEntity.isWishlisted
+            
         )
     }
     
@@ -92,7 +95,13 @@ extension CoreDataManager {
             print("Failed to delete product from wishlist: \(error)")
         }
     }
-
+    
+    func toggleWishlistStatus(for product: Product) {
+        let productEntity = createOrFetchProductEntity(for: product)
+        productEntity.isWishlisted.toggle()
+        saveContext()
+    }
+    
     func fetchWishlist() -> [Product] {
         let fetchRequest: NSFetchRequest<WishlistEntity> = WishlistEntity.fetchRequest()
         do {

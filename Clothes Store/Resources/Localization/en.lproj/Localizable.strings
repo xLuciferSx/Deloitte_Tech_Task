@@ -1,0 +1,18 @@
+/* 
+  en_GB.strings
+  Clothes Store
+
+  Created by Raivis on 12/11/2024.
+  Copyright © 2024 RichieHope. All rights reserved.
+*/
+
+"product_name" = "Product Name";
+"price" = "Price";
+"added_to_wishlist" = "%@ has been added to your wishlist.";
+"removed_from_wishlist" = "%@ has been removed from your wishlist.";
+"total_cost" = "Total Cost: %@";
+"remove" = "Remove";
+"catalogue_title" = "Catalogue";
+"search_placeholder" = "Search for products...";
+"loading_text" = "Loading...";
+"error_prefix" = "Error:";

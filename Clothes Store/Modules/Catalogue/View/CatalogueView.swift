@@ -16,13 +16,13 @@ struct CatalogueView: View {
     var body: some View {
         NavigationView {
             VStack {
-                TextField("Search for products...", text: $viewModel.searchQuery)
+                TextField("search_placeholder".localized, text: $viewModel.searchQuery)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.horizontal)
                     .padding(.top)
 
                 if viewModel.isLoading {
-                    ProgressView("Loading...")
+                    ProgressView("loading_text".localized)
                 } else if let errorMessage = viewModel.errorMessage {
                     Text("Error: \(errorMessage)")
                         .foregroundColor(.red)
@@ -43,7 +43,7 @@ struct CatalogueView: View {
                     }
                 }
             }
-            .navigationTitle("Catalogue")
+            .navigationTitle("catalogue_title".localized)
             .onAppear {
                 viewModel.fetchProducts()
             }
