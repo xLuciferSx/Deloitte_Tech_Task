@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FD8568D2-17A7-419C-A5EC-F5844D7C414A"
+            uuid = "0CBC37D6-F6E1-428F-8742-8336E60A7BF2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Clothes Store/Modules/Catalogue/ViewControllers/CatalogueViewModel.swift"
+            filePath = "ClothesStore_UnitTests/CoreDataManager_Tests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "fetchProducts()"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "testFetchBasket()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
