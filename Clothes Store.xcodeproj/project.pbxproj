@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13069799264698800065C4C4 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 13069798264698800065C4C4 /* AlamofireImage */; };
-		13BBE6C12642AC250045F488 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 13BBE6C02642AC250045F488 /* Alamofire */; };
 		1F0009722CE119BD00F7BFD6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0009712CE119BA00F7BFD6 /* Coordinator.swift */; };
 		1F0009742CE11A7700F7BFD6 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0009732CE11A7400F7BFD6 /* MainTabView.swift */; };
 		1F0009B12CE130AA00F7BFD6 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0009B02CE130A200F7BFD6 /* StoreManager.swift */; };
@@ -91,8 +89,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F0009B62CE1403800F7BFD6 /* Kingfisher in Frameworks */,
-				13BBE6C12642AC250045F488 /* Alamofire in Frameworks */,
-				13069799264698800065C4C4 /* AlamofireImage in Frameworks */,
 				1F8B767E2CE2BD0B00CF2AE1 /* Factory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,8 +260,6 @@
 			);
 			name = "Clothes Store";
 			packageProductDependencies = (
-				13BBE6C02642AC250045F488 /* Alamofire */,
-				13069798264698800065C4C4 /* AlamofireImage */,
 				1F0009B52CE1403800F7BFD6 /* Kingfisher */,
 				1F8B767D2CE2BD0B00CF2AE1 /* Factory */,
 			);
@@ -302,8 +296,6 @@
 			);
 			mainGroup = BE5F27EB22F035AF00F2C97D;
 			packageReferences = (
-				13BBE6BF2642AC250045F488 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				13069797264698800065C4C4 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 				1F0009B42CE1403800F7BFD6 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				1F8B767C2CE2BD0B00CF2AE1 /* XCRemoteSwiftPackageReference "Factory" */,
 			);
@@ -639,22 +631,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		13069797264698800065C4C4 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.2.0;
-			};
-		};
-		13BBE6BF2642AC250045F488 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.4.3;
-			};
-		};
 		1F0009B42CE1403800F7BFD6 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
@@ -674,16 +650,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		13069798264698800065C4C4 /* AlamofireImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 13069797264698800065C4C4 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
-			productName = AlamofireImage;
-		};
-		13BBE6C02642AC250045F488 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 13BBE6BF2642AC250045F488 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
 		1F0009B52CE1403800F7BFD6 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1F0009B42CE1403800F7BFD6 /* XCRemoteSwiftPackageReference "Kingfisher" */;

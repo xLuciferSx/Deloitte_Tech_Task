@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 
 // MARK: - Products
 struct Products: Codable {

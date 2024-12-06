@@ -7,39 +7,37 @@
 //
 
 import UIKit
-import AlamofireImage
 
 class CatalogueViewCollectionViewCell: UICollectionViewCell {
+  @IBOutlet var productName: UILabel!
+  @IBOutlet var productPrice: UILabel!
+  @IBOutlet var cellView: UIView!
+  @IBOutlet var wishListed: UIImageView!
+  @IBOutlet var productImage: UIImageView!
     
-    @IBOutlet var productName: UILabel!
-    @IBOutlet var productPrice: UILabel!
-    @IBOutlet var cellView: UIView!
-    @IBOutlet var wishListed: UIImageView!
-    @IBOutlet weak var productImage: UIImageView!
-    
-    func configureWithProduct(product: Product){
+  func configureWithProduct(product: Product) {
+    self.productName.text = product.name
+    self.productPrice.text = CurrencyHelper.getMoneyString(product.price ?? 0)
+    self.cellView.dropShadow(radius: 10, opacity: 0.1, color: .black)
+    let placeHolderImage = UIImage(named: "placeholderImage")
         
-        self.productName.text = product.name
-        self.productPrice.text = CurrencyHelper.getMoneyString(product.price ?? 0)
-        self.cellView.dropShadow(radius: 10, opacity: 0.1, color: .black)
-        let placeHolderImage = UIImage(named: "placeholderImage")
-        
-        if let imageURL = URL(string: product.image ?? "") {
-            productImage.af.setImage(withURL:  imageURL,
-                                     placeholderImage:  placeHolderImage,
-                                     imageTransition: .crossDissolve(0.3))
-        } else {
-            productImage.image = placeHolderImage
+    if let imageUrl = URL(string: product.image ?? "") {
+      URLSession.shared.dataTask(with: imageUrl) { data, _, error in
+        guard let data = data, error == nil else { return }
+        DispatchQueue.main.async {
+          self.productImage.image = UIImage(data: data)
         }
-        
+      }.resume()
+    } else {
+      self.productImage.image = placeHolderImage
     }
+  }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-        productImage.af.cancelImageRequest()
-        productImage.image = nil
-    }
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    super.prepareForReuse()
+    self.productName.text = nil
+    self.productPrice.text = nil
+    self.productImage.image = UIImage(named: "placeholderImage")
+  }
 }
-
-
