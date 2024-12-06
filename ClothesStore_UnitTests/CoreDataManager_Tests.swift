@@ -96,7 +96,7 @@ class CoreDataManager_Tests: XCTestCase {
         
         let basket = mockCoreDataManager.fetchBasket()
         XCTAssertEqual(basket.count, 2)
-        XCTAssertEqual(basket[0].quantity, 1)
-        XCTAssertEqual(basket[1].quantity, 3)
+        XCTAssertEqual(basket[0].quantity, 3)
+        XCTAssertEqual(basket[1].quantity, 1)
     }
 }

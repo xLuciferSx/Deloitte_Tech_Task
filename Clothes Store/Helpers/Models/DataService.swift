@@ -7,41 +7,51 @@
 //
 
 import Foundation
-import Alamofire
 
-class DataService {
-    
-    class func getProducts(completion: @escaping (Products?, Error?) -> Void) {
-        
-        let requestUrl = URLCall.catalogue.rawValue
-        
-        AF.request(requestUrl,
-                   method: .get,
-                   encoding: JSONEncoding.default).responseDecodable(of: Products.self){ response in
-                    
-                    switch response.result {
-                    case .success:
-                        
-                        guard let data = response.data else{return}
-                        
-                        let products = try? JSONDecoder().decode(Products.self, from: data)
-                        completion(products, nil)
-                        
-                    case .failure(let error):
-                        completion(nil, error)
-                    }
-                   }
-    }
+enum DataServiceError: Error {
+  case invalidURL
+  case noData
+  case decodingError(Error)
+  case networkError(Error)
 }
 
-// MARK: - Alamofire response handlers
+class DataService {
+  static let shared = DataService()
+  private init() {}
 
-extension AlamofireExtension {
-    func newJSONDecoder() -> JSONDecoder {
-        let decoder = JSONDecoder()
-        if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
-            decoder.dateDecodingStrategy = .iso8601
-        }
-        return decoder
+  private let decoder: JSONDecoder = {
+    let decoder = JSONDecoder()
+    if #available(iOS 10.0, *) {
+      decoder.dateDecodingStrategy = .iso8601
     }
+    return decoder
+  }()
+
+  func getProducts(completion: @escaping (Result<Products, DataServiceError>) -> Void) {
+    guard let url = URL(string: URLCall.catalogue.rawValue) else {
+      DispatchQueue.main.async { completion(.failure(.invalidURL)) }
+      return
+    }
+
+    URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+      guard let self = self else { return }
+
+      DispatchQueue.main.async {
+        if let error = error {
+          completion(.failure(.networkError(error)))
+          return
+        }
+        guard let data = data else {
+          completion(.failure(.noData))
+          return
+        }
+        do {
+          let products = try self.decoder.decode(Products.self, from: data)
+          completion(.success(products))
+        } catch {
+          completion(.failure(.decodingError(error)))
+        }
+      }
+    }.resume()
+  }
 }

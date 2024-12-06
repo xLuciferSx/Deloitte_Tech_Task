@@ -9,18 +9,22 @@
 import Factory
 
 extension Container {
-    static let shared = Container()
+  static let shared = Container()
     
-    static func setup() {
-        shared.coreDataManager.register { CoreDataManager.shared }
-        shared.storeManager.register { StoreManager.shared }
-    }
+  static func setup() {
+    shared.coreDataManager.register { CoreDataManager.shared }
+    shared.storeManager.register { StoreManager.shared }
+  }
     
-    var coreDataManager: Factory<CoreDataManager> {
-        Factory(self) { CoreDataManager.shared }
-    }
+  var coreDataManager: Factory<CoreDataManager> {
+    Factory(self) { CoreDataManager.shared }
+  }
     
-    var storeManager: Factory<StoreManager> {
-        Factory(self) { StoreManager.shared }
-    }
+  var storeManager: Factory<StoreManager> {
+    Factory(self) { StoreManager.shared }
+  }
+  
+  var dataService: Factory<DataService> {
+    Factory(self) { DataService.shared }
+  }
 }
